@@ -55,7 +55,16 @@ app.get('/about', (request, response) => {
 // app.use((request, response, next) => {
 //     response.render('maintance.hbs');
 // });
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
+
+// app.use((request, response, next) => {
+//     response.render('portfolio.hbs');
+// });
+app.get('/portfolio', (request, response) => {
+    response.render('portfolio.hbs', {
+        pageTitle: 'Welcome to Portfolio!!'
+    })
+})
 
 app.get('/bad', (request, response) => {
     response.send({
